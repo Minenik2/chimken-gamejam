@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5o0txaolwcr5"]
+
+[ext_resource type="AudioStream" uid="uid://bktatyfptewfo" path="res://audio/soundtrackchimken.ogg" id="1_s4pa7"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_s4pa7")
+volume_db = -20.0
+autoplay = true
