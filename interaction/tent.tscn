@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbqf735mh0o1a"]
+
+[ext_resource type="Texture2D" uid="uid://dtljoyet5xt11" path="res://art/tent.png" id="1_5yjyp"]
+[ext_resource type="Script" path="res://interaction/tent.gd" id="1_cmg8o"]
+[ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="2_ph41b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahahq"]
+size = Vector2(8, 7)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_cmg8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_5yjyp")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_ph41b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-8, 12.5)
+shape = SubResource("RectangleShape2D_ahahq")

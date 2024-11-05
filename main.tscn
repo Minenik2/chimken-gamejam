@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dutonqud3l7wd"]
+[gd_scene load_steps=13 format=3 uid="uid://dutonqud3l7wd"]
 
 [ext_resource type="PackedScene" uid="uid://beqbgtcynnw1y" path="res://inventory/hotbar.tscn" id="1_5oadl"]
 [ext_resource type="Texture2D" uid="uid://egisg0upa4ud" path="res://art/tileset.png" id="2_qlfi8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://benm2td7jfema" path="res://scene/voidbean.tscn" id="5_1im14"]
 [ext_resource type="Texture2D" uid="uid://brqqgnjh80w6f" path="res://art/forestback1.png" id="5_dkgqo"]
 [ext_resource type="PackedScene" uid="uid://ba121sv6j2b58" path="res://chest.tscn" id="7_6kskr"]
+[ext_resource type="PackedScene" uid="uid://bbqf735mh0o1a" path="res://interaction/tent.tscn" id="8_rvd5b"]
 [ext_resource type="PackedScene" uid="uid://dxgu8tmbc5od3" path="res://plantbasin.tscn" id="10_y6ilt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7g1m"]
@@ -93,3 +94,8 @@ flip_h = true
 [node name="plantbasin" parent="." instance=ExtResource("10_y6ilt")]
 position = Vector2(449, 427)
 scale = Vector2(4, 4)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_rvd5b")]
+z_index = -5
+position = Vector2(1092, 258)
+scale = Vector2(8, 8)

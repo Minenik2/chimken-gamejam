@@ -11,9 +11,11 @@ var hoversprite: Sprite2D
 
 func _on_body_entered(body: Node2D) -> void:
 	InteractionManager.register_area(self)
-	hoversprite.frame = 1
+	if hoversprite:
+		hoversprite.frame = 1
 
 
 func _on_body_exited(body: Node2D) -> void:
 	InteractionManager.unregister_area(self)
-	hoversprite.frame = 0
+	if hoversprite:
+		hoversprite.frame = 0

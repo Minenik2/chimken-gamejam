@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxgu8tmbc5od3"]
+[gd_scene load_steps=8 format=3 uid="uid://dxgu8tmbc5od3"]
 
 [ext_resource type="Script" path="res://plantbasin.gd" id="1_8x2ml"]
 [ext_resource type="Texture2D" uid="uid://c8u06u4v28btv" path="res://art/plantbasin.png" id="2_hglfc"]
+[ext_resource type="Resource" uid="uid://bdcg482f863xq" path="res://inventory/items/voidberry.tres" id="2_in7yi"]
 [ext_resource type="Texture2D" uid="uid://k2rk1unws2rb" path="res://art/voidplant.png" id="2_jwc7s"]
 [ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="3_rmqgn"]
 [ext_resource type="AudioStream" uid="uid://bl0r7c62pefuh" path="res://audio/hotbar.ogg" id="5_v0sne"]
@@ -11,6 +12,7 @@ size = Vector2(20.5, 9)
 
 [node name="plantbasin" type="StaticBody2D"]
 script = ExtResource("1_8x2ml")
+voidberry = ExtResource("2_in7yi")
 
 [node name="voidplant" type="Sprite2D" parent="."]
 visible = false
