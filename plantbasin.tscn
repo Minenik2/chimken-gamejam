@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxgu8tmbc5od3"]
+[gd_scene load_steps=7 format=3 uid="uid://dxgu8tmbc5od3"]
 
 [ext_resource type="Script" path="res://plantbasin.gd" id="1_8x2ml"]
 [ext_resource type="Texture2D" uid="uid://c8u06u4v28btv" path="res://art/plantbasin.png" id="2_hglfc"]
 [ext_resource type="Texture2D" uid="uid://k2rk1unws2rb" path="res://art/voidplant.png" id="2_jwc7s"]
 [ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="3_rmqgn"]
+[ext_resource type="AudioStream" uid="uid://bl0r7c62pefuh" path="res://audio/hotbar.ogg" id="5_v0sne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isk3d"]
 size = Vector2(20.5, 9)
@@ -32,3 +33,8 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(4.75, 8)
 shape = SubResource("RectangleShape2D_isk3d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_v0sne")
+pitch_scale = 1.8
+panning_strength = 0.0

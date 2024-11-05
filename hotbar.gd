@@ -23,7 +23,8 @@ func update_hotbar():
 		if item != null:
 			slot_button.texture_normal = item.texture  # Assuming `item.texture` is a texture
 		else: 
-			slot_button.texture_normal = null # Clear the slot if there's no item
+			var empty_texture = ImageTexture.new()  # Create a new empty ImageTexture
+			slot_button.texture_normal = empty_texture  # Set the button's texture to the empty texture
 
 func select_slot(slot_index: int):
 	hotbar_sound.play()

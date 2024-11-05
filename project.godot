@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 BgMusic="*res://bg_music.tscn"
 InteractionManager="*res://interaction/InteractionManager.tscn"
-Hotbar="*res://inventory/hotbar.tscn"
 
 [display]
 
