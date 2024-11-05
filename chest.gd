@@ -5,6 +5,7 @@ extends StaticBody2D
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_open_chest")
+	interaction_area.hoversprite = sprite_2d
 	
 func _open_chest():
 	print("open!")
