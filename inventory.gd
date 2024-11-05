@@ -7,6 +7,9 @@ class_name Inv
 func get_item_at(i: int):
 	return items[i]
 	
+func remove_item_at(i: int):
+	items[i] = null
+	
 func check_if_full() -> bool:
 	for x in items:
 		if x == null:

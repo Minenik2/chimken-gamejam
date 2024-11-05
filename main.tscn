@@ -1,15 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dutonqud3l7wd"]
+[gd_scene load_steps=12 format=3 uid="uid://dutonqud3l7wd"]
 
-[ext_resource type="Script" path="res://hotbar.gd" id="1_ksrgx"]
+[ext_resource type="PackedScene" uid="uid://beqbgtcynnw1y" path="res://inventory/hotbar.tscn" id="1_5oadl"]
 [ext_resource type="Texture2D" uid="uid://egisg0upa4ud" path="res://art/tileset.png" id="2_qlfi8"]
-[ext_resource type="Resource" uid="uid://c6xo3o5ntbudk" path="res://inventory/playerInv.tres" id="2_t1xln"]
 [ext_resource type="PackedScene" uid="uid://cb4r4cca4gtld" path="res://scene/angel.tscn" id="3_bltry"]
-[ext_resource type="Texture2D" uid="uid://boc5a21qqbfcb" path="res://art/cloud.png" id="3_w3d34"]
-[ext_resource type="AudioStream" uid="uid://bl0r7c62pefuh" path="res://audio/hotbar.ogg" id="4_gqy0r"]
 [ext_resource type="PackedScene" uid="uid://benm2td7jfema" path="res://scene/voidbean.tscn" id="5_1im14"]
 [ext_resource type="Texture2D" uid="uid://brqqgnjh80w6f" path="res://art/forestback1.png" id="5_dkgqo"]
 [ext_resource type="PackedScene" uid="uid://ba121sv6j2b58" path="res://chest.tscn" id="7_6kskr"]
-[ext_resource type="Resource" uid="uid://by4rwjwcwa7np" path="res://inventory/items/voidbean.tres" id="9_qnbv3"]
+[ext_resource type="PackedScene" uid="uid://dxgu8tmbc5od3" path="res://plantbasin.tscn" id="10_y6ilt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7g1m"]
 bg_color = Color(0.0674077, 0.0745679, 0.0750545, 1)
@@ -46,272 +43,7 @@ max_value = 10.0
 value = 5.0
 show_percentage = false
 
-[node name="Hotbar" type="PanelContainer" parent="ui"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -373.0
-offset_top = -90.0
-offset_right = 373.0
-grow_horizontal = 2
-grow_vertical = 0
-script = ExtResource("1_ksrgx")
-inventory = ExtResource("2_t1xln")
-
-[node name="MarginContainer" type="MarginContainer" parent="ui/Hotbar"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ui/Hotbar/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 22
-
-[node name="slot" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "1"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot"]
-layout_mode = 2
-
-[node name="slot1button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-stretch_mode = 0
-
-[node name="slot2" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot2"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot2"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "2"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot2"]
-layout_mode = 2
-
-[node name="slot2button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot2/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot3" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot3"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot3"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "3"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot3"]
-layout_mode = 2
-
-[node name="slot3button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot3/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot4" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot4"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot4"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "4"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot4"]
-layout_mode = 2
-
-[node name="slot4button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot4/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot5" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot5"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot5"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "5"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot5"]
-layout_mode = 2
-
-[node name="slot5button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot5/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot6" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot6"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot6"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "6"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot6"]
-layout_mode = 2
-
-[node name="slot6button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot6/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot7" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot7"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "8"
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot7"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot7"]
-layout_mode = 2
-
-[node name="slot7button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot7/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot8" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot8"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "9"
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot8"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot8"]
-layout_mode = 2
-
-[node name="slot8button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot8/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="slot9" type="PanelContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="slot" type="Panel" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot9"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot9"]
-z_index = 5
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 11
-text = "0"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot9"]
-layout_mode = 2
-
-[node name="slot9button" type="TextureButton" parent="ui/Hotbar/MarginContainer/HBoxContainer/slot9/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-texture_hover = ExtResource("3_w3d34")
-stretch_mode = 0
-
-[node name="hotbarSound" type="AudioStreamPlayer2D" parent="ui/Hotbar"]
-stream = ExtResource("4_gqy0r")
-panning_strength = 0.0
-
-[node name="pickupSound" type="AudioStreamPlayer2D" parent="ui/Hotbar"]
-stream = ExtResource("4_gqy0r")
-pitch_scale = 0.44
-panning_strength = 0.0
+[node name="Hotbar" parent="ui" instance=ExtResource("1_5oadl")]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -342,7 +74,6 @@ drag_vertical_enabled = true
 texture_filter = 1
 position = Vector2(596, 450)
 scale = Vector2(3, 3)
-InvItem = ExtResource("9_qnbv3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -100
@@ -358,3 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_dkgqo")
 flip_h = true
+
+[node name="plantbasin" parent="." instance=ExtResource("10_y6ilt")]
+position = Vector2(449, 427)
+scale = Vector2(4, 4)

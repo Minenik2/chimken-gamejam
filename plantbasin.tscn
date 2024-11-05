@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxgu8tmbc5od3"]
+
+[ext_resource type="Script" path="res://plantbasin.gd" id="1_8x2ml"]
+[ext_resource type="Texture2D" uid="uid://c8u06u4v28btv" path="res://art/plantbasin.png" id="2_hglfc"]
+[ext_resource type="Texture2D" uid="uid://k2rk1unws2rb" path="res://art/voidplant.png" id="2_jwc7s"]
+[ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="3_rmqgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isk3d"]
+size = Vector2(20.5, 9)
+
+[node name="plantbasin" type="StaticBody2D"]
+script = ExtResource("1_8x2ml")
+
+[node name="voidplant" type="Sprite2D" parent="."]
+visible = false
+z_index = -30
+texture_filter = 1
+position = Vector2(3, -3)
+texture = ExtResource("2_jwc7s")
+hframes = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -25
+texture_filter = 1
+position = Vector2(4.33334, 1.66666)
+scale = Vector2(1.4375, 1.4375)
+texture = ExtResource("2_hglfc")
+hframes = 2
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_rmqgn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(4.75, 8)
+shape = SubResource("RectangleShape2D_isk3d")

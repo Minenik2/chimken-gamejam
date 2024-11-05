@@ -8,6 +8,7 @@ extends Control
 var selected_slot := 0  # Index of the selected slot
 
 func _ready():
+	highlight_slot(selected_slot)
 	update_hotbar()
 
 func update_hotbar():
@@ -19,10 +20,10 @@ func update_hotbar():
 		var item = inventory.get_item_at(i)
 		
 		# Update the slot's icon based on the inventory item
-		if item:
+		if item != null:
 			slot_button.texture_normal = item.texture  # Assuming `item.texture` is a texture
-		else:
-			slot_button.texture_normal = null  # Clear the slot if there's no item
+		else: 
+			slot_button.texture_normal = null # Clear the slot if there's no item
 
 func select_slot(slot_index: int):
 	hotbar_sound.play()
@@ -52,3 +53,13 @@ func add_item(item: InvItem):
 
 func check_if_full():
 	return inventory.check_if_full()
+	
+func return_selected_slot() -> InvItem:
+	return inventory.items[selected_slot]
+	
+func delete_selected_slot():
+	print("slot deleted")
+	print(inventory.items[selected_slot])
+	inventory.remove_item_at(selected_slot)
+	print(inventory.items)
+	update_hotbar()
