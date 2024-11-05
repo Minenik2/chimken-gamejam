@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba121sv6j2b58"]
+
+[ext_resource type="Script" path="res://chest.gd" id="1_nhajt"]
+[ext_resource type="Texture2D" uid="uid://dg4285kts4rrj" path="res://art/chest.png" id="2_j65gh"]
+[ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="3_kkv3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cuiw"]
+size = Vector2(46, 16.3333)
+
+[node name="chest" type="StaticBody2D"]
+texture_filter = 1
+position = Vector2(770, 442)
+scale = Vector2(3, 3)
+script = ExtResource("1_nhajt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -25
+position = Vector2(4.33334, 1.66666)
+scale = Vector2(1.4375, 1.4375)
+texture = ExtResource("2_j65gh")
+hframes = 2
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_kkv3f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(4.33331, 5.16666)
+shape = SubResource("RectangleShape2D_6cuiw")

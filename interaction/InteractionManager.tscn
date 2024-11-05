@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://p3a1s3f08scu"]
+
+[ext_resource type="Script" path="res://interaction/interaction_manager.gd" id="1_jp7mh"]
+[ext_resource type="Theme" uid="uid://cocdcanfnr422" path="res://our_theme.tres" id="1_ya3wg"]
+
+[node name="InteractionManager" type="Node2D" groups=["player"]]
+script = ExtResource("1_jp7mh")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme = ExtResource("1_ya3wg")
+theme_override_font_sizes/font_size = 19
+text = "[E] TO INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1
