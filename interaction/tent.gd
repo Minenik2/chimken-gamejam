@@ -9,5 +9,7 @@ func _ready() -> void:
 	interaction_area.hoversprite = sprite_2d
 	
 func _sleep():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
 	plantbasin.nextDay()
 	print("next day!")

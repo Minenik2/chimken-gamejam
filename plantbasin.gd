@@ -36,7 +36,7 @@ func plant():
 	voidplant.show()
 	
 func nextDay():
-	if !finished:
+	if !finished && planted:
 		voidplant.frame += 1
 		# if the voidplant has fully grown
 		if voidplant.frame == 2:
