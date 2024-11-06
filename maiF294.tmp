@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dutonqud3l7wd"]
+[gd_scene load_steps=19 format=3 uid="uid://dutonqud3l7wd"]
 
 [ext_resource type="PackedScene" uid="uid://beqbgtcynnw1y" path="res://inventory/hotbar.tscn" id="1_5oadl"]
 [ext_resource type="Script" path="res://ui.gd" id="1_qwf67"]
@@ -8,15 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cb4r4cca4gtld" path="res://scene/angel.tscn" id="3_bltry"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="3_xfp8x"]
 [ext_resource type="Script" path="res://inventory/gold_show.gd" id="4_8mv6b"]
-[ext_resource type="Resource" uid="uid://by4rwjwcwa7np" path="res://inventory/items/voidbean.tres" id="4_nrj0k"]
 [ext_resource type="PackedScene" uid="uid://benm2td7jfema" path="res://scene/voidbean.tscn" id="5_1im14"]
 [ext_resource type="Texture2D" uid="uid://brqqgnjh80w6f" path="res://art/forestback1.png" id="5_dkgqo"]
-[ext_resource type="Resource" uid="uid://bdcg482f863xq" path="res://inventory/items/voidberry.tres" id="5_t3len"]
 [ext_resource type="PackedScene" uid="uid://ba121sv6j2b58" path="res://chest.tscn" id="7_6kskr"]
 [ext_resource type="PackedScene" uid="uid://bbqf735mh0o1a" path="res://interaction/tent.tscn" id="8_rvd5b"]
 [ext_resource type="PackedScene" uid="uid://38c6kyeg0gjw" path="res://item_seller.tscn" id="9_0mmhu"]
 [ext_resource type="PackedScene" uid="uid://dxgu8tmbc5od3" path="res://plantbasin.tscn" id="10_y6ilt"]
-[ext_resource type="PackedScene" uid="uid://chcixhg0486aa" path="res://inventory/ShopManager.tscn" id="15_lemdx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7g1m"]
 bg_color = Color(0.0674077, 0.0745679, 0.0750545, 1)
@@ -42,10 +39,6 @@ sources/0 = SubResource("TileSetAtlasSource_bd16a")
 [node name="ui" type="CanvasLayer" parent="."]
 script = ExtResource("1_qwf67")
 dialogue_json = ExtResource("2_5uu5y")
-
-[node name="ShopManager" parent="ui" instance=ExtResource("15_lemdx")]
-VOIDBEAN = ExtResource("4_nrj0k")
-VOIDBERRY = ExtResource("5_t3len")
 
 [node name="staminabar" type="ProgressBar" parent="ui"]
 texture_filter = 1
@@ -89,26 +82,21 @@ z_index = 1000
 position = Vector2(238, 224)
 script = ExtResource("2_frvah")
 
-[node name="PanelContainer" type="PanelContainer" parent="ui/dialogue_box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/dialogue_box"]
+z_index = 100
 custom_minimum_size = Vector2(600, 0)
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -131.0
-offset_top = 227.0
-offset_right = 469.0
+offset_top = 220.0
+offset_right = 332.0
 offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/dialogue_box/PanelContainer"]
-z_index = 100
-custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
-
-[node name="text" type="Label" parent="ui/dialogue_box/PanelContainer/VBoxContainer"]
+[node name="text" type="Label" parent="ui/dialogue_box/VBoxContainer"]
 layout_mode = 2
 text = "some dialog content"
 autowrap_mode = 2
@@ -174,6 +162,8 @@ scale = Vector2(8, 8)
 texture_filter = 1
 position = Vector2(127, 401)
 scale = Vector2(5, 5)
+
+[node name="shop_manager" type="Node2D" parent="."]
 
 [connection signal="custom_signal_received" from="ui/dialogue_box/EzDialogue" to="ui" method="_on_ez_dialogue_custom_signal_received"]
 [connection signal="dialogue_generated" from="ui/dialogue_box/EzDialogue" to="ui" method="_on_ez_dialogue_dialogue_generated"]

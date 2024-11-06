@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://38c6kyeg0gjw"]
+
+[ext_resource type="Script" path="res://interaction/item_seller.gd" id="1_jtf2x"]
+[ext_resource type="PackedScene" uid="uid://1n20hq5scqi2" path="res://interaction/interaction area/interaction_area.tscn" id="2_lc6x5"]
+[ext_resource type="JSON" path="res://dialogue/dialogue.json" id="2_t8bww"]
+[ext_resource type="Texture2D" uid="uid://dxvth78toi0yf" path="res://art/catgirl-idle.png" id="3_ky6uk"]
+[ext_resource type="JSON" path="res://dialogue/rasberylshop.json" id="3_uwq3i"]
+[ext_resource type="AudioStream" uid="uid://bl0r7c62pefuh" path="res://audio/hotbar.ogg" id="4_0jd1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_341qu"]
+size = Vector2(13.5, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aq7t"]
+atlas = ExtResource("3_ky6uk")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12bh4"]
+atlas = ExtResource("3_ky6uk")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j07fx"]
+atlas = ExtResource("3_ky6uk")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asdw1"]
+atlas = ExtResource("3_ky6uk")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7cjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aq7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12bh4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j07fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asdw1")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}]
+
+[node name="itemSeller" type="StaticBody2D"]
+position = Vector2(127, 414)
+script = ExtResource("1_jtf2x")
+dialogue_json = ExtResource("2_t8bww")
+catgirlShop = ExtResource("3_uwq3i")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_lc6x5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.25, 4)
+shape = SubResource("RectangleShape2D_341qu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b7cjc")
+autoplay = "default"
+frame_progress = 0.693427
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0jd1l")
+pitch_scale = 2.29

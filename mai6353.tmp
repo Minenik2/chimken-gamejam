@@ -89,26 +89,21 @@ z_index = 1000
 position = Vector2(238, 224)
 script = ExtResource("2_frvah")
 
-[node name="PanelContainer" type="PanelContainer" parent="ui/dialogue_box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/dialogue_box"]
+z_index = 100
 custom_minimum_size = Vector2(600, 0)
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -131.0
-offset_top = 227.0
-offset_right = 469.0
+offset_top = 220.0
+offset_right = 332.0
 offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ui/dialogue_box/PanelContainer"]
-z_index = 100
-custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
-
-[node name="text" type="Label" parent="ui/dialogue_box/PanelContainer/VBoxContainer"]
+[node name="text" type="Label" parent="ui/dialogue_box/VBoxContainer"]
 layout_mode = 2
 text = "some dialog content"
 autowrap_mode = 2

@@ -1,0 +1,62 @@
+[
+	{
+		"commands_raw": "Hello, aren't you an intricate looking fella?\n\n?> who are you? -> choice number one node\n?> where am I? -> choice number two node",
+		"gnode_name": "start",
+		"id": 0,
+		"name": "start",
+		"position": [
+			280,
+			260
+		]
+	},
+	{
+		"commands_raw": "my name is Rasberyl, I have a sister called Tina, she's wayy less competent than me in managing trader goods, therefore I usually take care of all the deals\n\n?> \"...\" -> shop",
+		"gnode_name": "choice number one node",
+		"id": 1,
+		"name": "choice number one node",
+		"position": [
+			480,
+			180
+		]
+	},
+	{
+		"commands_raw": "You're in Saintshade Town, a true misty nightmare with rolling fog, as you've noticed this town has a mystical quality. There's a church nearby and it is seen by the locals as a beacon through the mist, guiding both lost souls and wandering travelers to safety, or so they say at least, huehue.  \n\n?> are you a shopkeeper? -> shop\n?> church? -> church",
+		"gnode_name": "choice number two node",
+		"id": 2,
+		"name": "choice number two node",
+		"position": [
+			440,
+			320
+		]
+	},
+	{
+		"commands_raw": "If you want anything just ask me, I can sell your crops and give you seeds, for a price of course!\n\n?> \"end conversation\" -> end",
+		"gnode_name": "shop",
+		"id": 3,
+		"name": "shop",
+		"position": [
+			940,
+			220
+		]
+	},
+	{
+		"commands_raw": "Yes! If you ask me I pray all kinds of pranks on one of their members, her name is Mio.\n\n\n?> \"...\" -> shop",
+		"gnode_name": "church",
+		"id": 4,
+		"name": "church",
+		"position": [
+			760,
+			380
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "end",
+		"id": 5,
+		"name": "end",
+		"position": [
+			1140,
+			220
+		]
+	}
+]

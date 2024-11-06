@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://d22tpxinmhb64" path="res://font/cute-mono/retro-pixel-cute-mono.ttf" id="1_cb5vu"]
 
 [resource]
-Label/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_cb5vu")
+Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("1_cb5vu")
