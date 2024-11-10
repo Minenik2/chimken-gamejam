@@ -2,12 +2,16 @@ extends StaticBody2D
 
 @export var dialogue_json: JSON
 @export var catgirlShop: JSON
-@onready var state = {}
+@onready var state = {
+	"berries_sold": berries_sold < 9,
+	"berries": str(berries_sold)
+}
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite_2d: Sprite2D = $Sprite2D
 var ongoing_conversation = false
 var spokenFirstTime = false
+var berries_sold = 0
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_talk_rasberyl")
@@ -25,3 +29,8 @@ func _talk_rasberyl():
 		$"../player".SPEED = 0
 		$AudioStreamPlayer2D.play()
 		
+func update_state():
+	state = {
+	"berries_sold": berries_sold < 2,
+	"berries": str(berries_sold)
+	}

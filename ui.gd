@@ -1,9 +1,6 @@
 extends CanvasLayer
 
 @export var dialogue_json: JSON
-@onready var state = {
-	"completed quest": berries_sold > 2
-}
 var ongoingconversation = false
 var berries_sold = 0
 
@@ -27,4 +24,3 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		$ShopManager.buy(params[1])
 	elif params[0] == "sell":
 		$ShopManager.sell()
-		berries_sold += 1

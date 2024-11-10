@@ -20,3 +20,7 @@ func sell():
 			$"../Hotbar".delete_selected_slot()
 			gold_show.update()
 			$AudioStreamPlayer2D.play()
+			
+			$"../../itemSeller".berries_sold += 1
+			$"../../itemSeller".update_state()
+			print("item seller sold berries:", $"../../itemSeller".berries_sold)
